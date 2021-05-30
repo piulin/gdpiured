@@ -1,0 +1,33 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/Sequencer/Sequencer.gd" type="Script" id=1]
+[ext_resource path="res://scenes/sequencer/Beat2SecondConverter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/sequencer/Beat2PositionConverter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/sequencer/Second2BeatConverter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/sequencer/Beat2SpeedConverter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/sequencer/Beat2TickConverter.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/sequencer/PiuSSCStageLoader.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scripts/Sequencer/Converters.gd" type="Script" id=8]
+[ext_resource path="res://scripts/Sequencer/StepQueue/StepQueue.gd" type="Script" id=9]
+
+[node name="Sequencer" type="Node"]
+script = ExtResource( 1 )
+stage_loader_path = NodePath("PiuSSCStageLoader")
+
+[node name="Converters" type="Node" parent="."]
+script = ExtResource( 8 )
+
+[node name="Beat2SecondConverter" parent="Converters" instance=ExtResource( 2 )]
+
+[node name="Beat2PositionConverter" parent="Converters" instance=ExtResource( 3 )]
+
+[node name="Beat2SpeedConverter" parent="Converters" instance=ExtResource( 5 )]
+
+[node name="Beat2TickConverter" parent="Converters" instance=ExtResource( 6 )]
+
+[node name="Second2BeatConverter" parent="Converters" instance=ExtResource( 4 )]
+
+[node name="PiuSSCStageLoader" parent="." instance=ExtResource( 7 )]
+
+[node name="StepQueue" type="Node" parent="."]
+script = ExtResource( 9 )

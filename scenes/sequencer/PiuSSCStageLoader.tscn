@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/sequencer/StageLoader.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Sequencer/StageLoaders/PiuSSCStageLoader.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Sequencer/StageLoaders/PiuSSCParser.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Sequencer/StageLoaders/SSC.gd" type="Script" id=4]
+
+[node name="PiuSSCStageLoader" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="PiuParser" type="Node" parent="." index="0"]
+script = ExtResource( 3 )
+
+[node name="SSC" type="Node" parent="PiuParser" index="0"]
+script = ExtResource( 4 )

@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Piured"
-run/main_scene="res://src/Spatial.tscn"
+run/main_scene="res://scenes/game/GameMaster.tscn"
 config/icon="res://icon.png"
 
 [physics]
